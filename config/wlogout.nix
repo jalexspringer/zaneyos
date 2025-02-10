@@ -43,7 +43,7 @@
     ];
     style = ''
       * {
-        font-family: "JetBrainsMono NF", FontAwesome, sans-serif;
+        font-family: "Iosevka Term", FontAwesome, sans-serif;
       	background-image: none;
       	transition: 20ms;
       }

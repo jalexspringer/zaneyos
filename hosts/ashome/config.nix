@@ -81,7 +81,7 @@ in
     fonts = {
       monospace = {
         package = pkgs.nerd-fonts.iosevka-term;
-        name = "Iosevka Term Font";
+        name = "IosevkaTerm";
       };
       sansSerif = {
         package = pkgs.montserrat;
@@ -93,7 +93,7 @@ in
       };
       sizes = {
         applications = 12;
-        terminal = 15;
+        terminal = 12;
         desktop = 11;
         popups = 12;
       };

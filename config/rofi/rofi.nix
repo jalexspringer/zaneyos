@@ -10,7 +10,7 @@
         show-icons = true;
         icon-theme = "Papirus";
         location = 0;
-        font = "JetBrainsMono Nerd Font Mono 12";
+        font = "Iosevka Term 12";
         drun-display-format = "{icon} {name}";
         display-drun = " Apps";
         display-run = " Run";

@@ -183,7 +183,7 @@ with lib;
     style = concatStrings [
       ''
         * {
-          font-family: JetBrainsMono Nerd Font Mono;
+          font-family: Iosevka Term;
           font-size: 16px;
           border-radius: 0px;
           border: none;

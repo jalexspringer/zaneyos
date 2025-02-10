@@ -169,6 +169,10 @@ in
     zed-editor = {
       enable = true;
     };
+    yazi = {
+      enable = true;
+      enableFishIntegration = true;
+    };
     kitty = {
       enable = true;
       package = pkgs.kitty;
@@ -184,6 +188,9 @@ in
         active_tab_font_style   bold
         inactive_tab_font_style bold
       '';
+      keybindings = {
+        "ctrl + s" = "set_font_size 20";
+      };
     };
      starship = {
             enable = true;
@@ -205,20 +212,11 @@ in
       '';
 
       shellAliases = myAliases;
-
-      # {
-      #   sv = "sudo nvim";
-      #   fr = "nh os switch --hostname ${host} /home/${username}/zaneyos";
-      #   fu = "nh os switch --hostname ${host} --update /home/${username}/zaneyos";
-      #   zu = "sh <(curl -L https://gitlab.com/Zaney/zaneyos/-/raw/main/install-zaneyos.sh)";
-      #   ncg = "nix-collect-garbage --delete-old && sudo nix-collect-garbage -d && sudo /run/current-system/bin/switch-to-configuration boot";
-      #   v = "nvim";
-      #   cat = "bat";
-      #   ls = "eza --icons";
-      #   ll = "eza -lh --icons --grid --group-directories-first";
-      #   la = "eza -lah --icons --grid --group-directories-first";
-      #   ".." = "cd ..";
-      # };
+    };
+    fish = {
+      enable = true;
+      generateCompletions = true;
+      shellAliases = myAliases;
     };
     home-manager.enable = true;
     hyprlock = {
