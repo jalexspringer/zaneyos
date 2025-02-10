@@ -245,6 +245,7 @@ in
 
   environment.systemPackages = with pkgs; [
     uv
+    ruff-lsp
     zoxide
     yazi
     fzf

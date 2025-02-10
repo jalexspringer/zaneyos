@@ -20,8 +20,8 @@ let
     la = "eza -lah --icons --grid --group-directories-first";
     ".." = "cd ..";
     zvm = "/home/${username}/.zvm/self/zvm";
-    zig = "/home/${username}/.zvm/bin/zig";
-    zls = "/home/${username}/.zvm/bin/zls";
+    # zig = "/home/${username}/.zvm/bin/zig";
+    # zls = "/home/${username}/.zvm/bin/zls";
   };
 in
 {
@@ -29,7 +29,7 @@ in
   home.username = "${username}";
   home.homeDirectory = "/home/${username}";
   home.stateVersion = "24.11";
-  home.sessionPath = [ "/home/${username}/zvm/bin/" ];
+  home.sessionPath = [ "/home/${username}/.zvm/bin/" ];
 
   # Import Program Configurations
   imports = [
