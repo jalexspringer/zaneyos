@@ -248,7 +248,6 @@ in
     ruff-lsp
     zoxide
     yazi
-    fzf
     helix
     chromium
     _1password-cli
