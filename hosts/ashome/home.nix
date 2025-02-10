@@ -20,6 +20,8 @@ let
     la = "eza -lah --icons --grid --group-directories-first";
     ".." = "cd ..";
     zvm = "/home/${username}/.zvm/self/zvm";
+    zig = "/home/${username}/.zvm/bin/zig";
+    zls = "/home/${username}/.zvm/bin/zls";
   };
 in
 {
