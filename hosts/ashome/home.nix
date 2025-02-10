@@ -162,6 +162,8 @@ in
   };
 
   programs = {
+
+    librewolf.enable = true;
     gh.enable = true;
     btop = {
       enable = true;
