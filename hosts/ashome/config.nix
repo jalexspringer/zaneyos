@@ -236,6 +236,7 @@ in
       ];
     };
   };
+  zoxide.enable = true;
 
   nixpkgs.config.allowUnfree = true;
 
@@ -246,7 +247,6 @@ in
   environment.systemPackages = with pkgs; [
     uv
     ruff-lsp
-    zoxide
     yazi
     helix
     chromium

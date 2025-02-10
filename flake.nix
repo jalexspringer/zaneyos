@@ -10,6 +10,8 @@
       url = "github:VonHeikemen/fine-cmdline.nvim";
       flake = false;
     };
+    flake-programs-sqlite.url = "github:wamserma/flake-programs-sqlite";
+    flake-programs-sqlite.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs =
@@ -31,6 +33,7 @@
           modules = [
             ./hosts/${host}/config.nix
             inputs.stylix.nixosModules.stylix
+            inputs.flake-programs-sqlite.nixosModules.programs-sqlite
             home-manager.nixosModules.home-manager
             {
               home-manager.extraSpecialArgs = {
