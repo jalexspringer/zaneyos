@@ -244,6 +244,7 @@ in
   };
 
   environment.systemPackages = with pkgs; [
+    github-desktop
     uv
     ruff-lsp
     yazi
