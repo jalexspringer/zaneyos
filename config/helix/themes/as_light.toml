@@ -1,0 +1,13 @@
+# inherits = "ayu_evolve"
+inherits = "onelight"
+# "ui.background" ={}
+# 
+# "ui.cursor" = { fg = "grey", bg = "light_gray" }
+# "ui.cursor.primary.normal" = { fg = "grey", bg = "grey" }
+# "ui.cursor.primary.select" = { fg = "grey", bg = "purple" }
+# "ui.cursor.primary.insert" = { fg = "grey", bg = "gold" }
+
+# "ui.statusline.normal" = { modifiers = ["bold"] }
+# "ui.statusline.insert" = { bg = "gold", modifiers = ["bold"] }
+# "ui.statusline.select" = { bg = "purple", modifiers = ["bold"] }
+# "ui.statusline" = { fg = "white", bg = "light-blue"}

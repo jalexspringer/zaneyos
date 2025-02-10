@@ -1,0 +1,60 @@
+#----------------------------------------
+# Font Configuration
+#----------------------------------------
+font-family = Hack Nerd Font
+font-size = 14
+
+#----------------------------------------
+# Theme and Appearance
+#----------------------------------------
+# theme = ayu
+# theme = OneHalfLight
+theme = rose-pine-moon
+background-opacity = 0.9
+cursor-style = block
+adjust-cell-height = 15%
+adjust-cursor-thickness = 220%
+
+#----------------------------------------
+# Window Settings
+#----------------------------------------
+window-padding-x = 10
+window-padding-y = 6
+window-padding-balance = true
+# window-save-state = always
+
+#----------------------------------------
+# macOS Specific Settings
+#----------------------------------------
+macos-titlebar-style = transparent
+macos-option-as-alt = left
+
+#----------------------------------------
+# Mouse Behavior
+#----------------------------------------
+mouse-hide-while-typing = true
+mouse-scroll-multiplier = 2
+
+#----------------------------------------
+# Shell Integration
+#----------------------------------------
+shell-integration-features = no-cursor,sudo,no-title
+copy-on-select = clipboard
+
+#----------------------------------------
+# Keybindings
+#----------------------------------------
+# Split Management
+keybind = cmd+s>\=new_split:right
+keybind = cmd+s>-=new_split:down
+
+# Split Navigation
+keybind = cmd+s>j=goto_split:bottom
+keybind = cmd+s>k=goto_split:top
+keybind = cmd+s>h=goto_split:left
+keybind = cmd+s>l=goto_split:right
+
+keybind = cmd+shift+up=resize_split:up,20
+keybind = cmd+shift+down=resize_split:down,20
+keybind = cmd+shift+left=resize_split:left,20
+keybind = cmd+shift+right=resize_split:right,20

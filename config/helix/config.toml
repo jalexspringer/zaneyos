@@ -1,0 +1,29 @@
+theme = "as_dark"
+# theme = "as_light"
+
+[editor]
+color-modes = true
+line-number = "relative"
+mouse = false
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.file-picker]
+hidden = false
+
+[editor.statusline]
+mode.normal = "NORMAL"
+mode.insert = "INSERT"
+mode.select = "SELECT"
+
+[editor.auto-save]
+focus-lost = true
+
+
+[keys.select]
+"{" = "goto_prev_paragraph"
+"}" = "goto_next_paragraph"
+
