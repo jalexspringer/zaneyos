@@ -1,5 +1,6 @@
 {
   pkgs,
+  lib,
   username,
   host,
   ...
@@ -18,6 +19,7 @@ let
     ll = "eza -lh --icons --grid --group-directories-first";
     la = "eza -lah --icons --grid --group-directories-first";
     ".." = "cd ..";
+    zvm = "/home/${username}/.zvm/self/zvm";
   };
 in
 {
@@ -25,6 +27,7 @@ in
   home.username = "${username}";
   home.homeDirectory = "/home/${username}";
   home.stateVersion = "24.11";
+  home.sessionPath = [ "/home/${username}/zvm/bin/" ];
 
   # Import Program Configurations
   imports = [
@@ -105,11 +108,11 @@ in
       gtk-application-prefer-dark-theme = 1;
     };
   };
-  qt = {
-    enable = true;
-    style.name = "adwaita-dark";
-    platformTheme.name = "gtk3";
-  };
+  # qt = {
+  #   enable = true;
+  #   style.name = lib.mkDefault "adwaita-dark";
+  #   platformTheme.name = lib.mkDefault "gtk3";
+  # };
 
 
   # Scripts
