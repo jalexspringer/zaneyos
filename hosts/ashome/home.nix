@@ -24,7 +24,7 @@ in
   # Home Manager Settings
   home.username = "${username}";
   home.homeDirectory = "/home/${username}";
-  home.stateVersion = "23.11";
+  home.stateVersion = "24.11";
 
   # Import Program Configurations
   imports = [
@@ -64,6 +64,8 @@ in
     early_exit=true
     fill_shape=false
   '';
+
+  # home.file.".config/ghostty/config".source = ../../config/ghostty/config;
 
   # Install & Configure Git
   programs.git = {
@@ -160,6 +162,12 @@ in
       settings = {
         vim_keys = true;
       };
+    };
+    ghostty = {
+      enable = true;
+    };
+    zed-editor = {
+      enable = true;
     };
     kitty = {
       enable = true;

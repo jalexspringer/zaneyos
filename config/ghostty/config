@@ -1,8 +1,8 @@
 #----------------------------------------
 # Font Configuration
 #----------------------------------------
-font-family = Hack Nerd Font
-font-size = 14
+font-family = Iosevka Term
+font-size = 12
 
 #----------------------------------------
 # Theme and Appearance
@@ -10,7 +10,7 @@ font-size = 14
 # theme = ayu
 # theme = OneHalfLight
 theme = rose-pine-moon
-background-opacity = 0.9
+background-opacity = 0.8
 cursor-style = block
 adjust-cell-height = 15%
 adjust-cursor-thickness = 220%
