@@ -144,6 +144,7 @@ in
   programs = {
     firefox.enable = true;
     chromium.enable = true;
+    librewolf.enable = true;
     starship = {
       enable = true;
       settings = {
@@ -249,7 +250,6 @@ in
     ruff-lsp
     yazi
     helix
-    chromium
     _1password-cli
     _1password-gui
     vim
