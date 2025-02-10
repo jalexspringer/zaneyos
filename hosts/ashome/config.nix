@@ -144,7 +144,6 @@ in
   programs = {
     firefox.enable = true;
     chromium.enable = true;
-    zoxide.enable = true;
     starship = {
       enable = true;
       settings = {

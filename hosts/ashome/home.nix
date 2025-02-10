@@ -79,6 +79,7 @@ in
     userEmail = "${gitEmail}";
   };
 
+  programs.zoxide.enable = true;
   # Create XDG Dirs
   xdg = {
     userDirs = {
