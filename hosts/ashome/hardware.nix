@@ -8,28 +8,20 @@
     [ (modulesPath + "/installer/scan/not-detected.nix")
     ];
 
-  boot.initrd.availableKernelModules = [ "xhci_pci" "ehci_pci" "ahci" "nvme" "usbhid" "usb_storage" "sd_mod" ];
+  boot.initrd.availableKernelModules = [ "nvme" "xhci_pci" "ahci" "usb_storage" "usbhid" "uas" "sd_mod" ];
   boot.initrd.kernelModules = [ ];
-  boot.kernelModules = [ "kvm-intel" ];
+  boot.kernelModules = [ "kvm-amd" ];
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/8bac633b-c4e6-44bc-83b3-97b5472594e8";
+    { device = "/dev/disk/by-uuid/beb2d4ca-bfce-48ee-8792-f93e2963d783";
       fsType = "ext4";
     };
 
-  boot.initrd.luks.devices."luks-8941ac93-f043-46d1-b128-37d5e846303f".device = "/dev/disk/by-uuid/8941ac93-f043-46d1-b128-37d5e846303f";
-
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/BC0C-F843";
+    { device = "/dev/disk/by-uuid/09DD-2402";
       fsType = "vfat";
       options = [ "fmask=0077" "dmask=0077" ];
-    };
-
-  fileSystems."/home/zaney/BFD" =
-    { device = "/dev/disk/by-uuid/5A30E2CC30E2AE67";
-      fsType = "ntfs";
-      options = [  "defaults" "umask=000" "dmask=027" "fmask=137" "uid=1000" "gid=1000" "windows_names" ];
     };
 
   swapDevices = [ ];
@@ -39,8 +31,9 @@
   # still possible to use this option, but it's recommended to use it in conjunction
   # with explicit per-interface declarations with `networking.interfaces.<interface>.useDHCP`.
   networking.useDHCP = lib.mkDefault true;
-  # networking.interfaces.enp5s0.useDHCP = lib.mkDefault true;
+  # networking.interfaces.eno1.useDHCP = lib.mkDefault true;
+  # networking.interfaces.wlp5s0.useDHCP = lib.mkDefault true;
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
-  hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+  hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 }

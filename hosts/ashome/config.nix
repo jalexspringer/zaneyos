@@ -102,7 +102,7 @@ in
 
   # Extra Module Options
   drivers.amdgpu.enable = false;
-  drivers.nvidia.enable = false;
+  drivers.nvidia.enable = true;
   drivers.nvidia-prime = {
     enable = false;
     intelBusID = "";
@@ -136,7 +136,7 @@ in
   };
 
   programs = {
-    firefox.enable = false;
+    firefox.enable = true;
     starship = {
       enable = true;
       settings = {
@@ -237,6 +237,9 @@ in
   };
 
   environment.systemPackages = with pkgs; [
+    helix
+    _1password-cli
+    _1password-gui
     vim
     wget
     killall
@@ -261,7 +264,6 @@ in
     pciutils
     ffmpeg
     socat
-    cowsay
     ripgrep
     lshw
     bat
@@ -291,9 +293,9 @@ in
     gimp
     pavucontrol
     tree
-    spotify
     neovide
     greetd.tuigreet
+    tidal-hifi
   ];
 
   fonts = {
@@ -332,7 +334,7 @@ in
       enable = false;
       xkb = {
         layout = "${keyboardLayout}";
-        variant = "";
+        variant = "mac";
       };
     };
     greetd = {
