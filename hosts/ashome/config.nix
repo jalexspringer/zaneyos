@@ -244,6 +244,10 @@ in
   };
 
   environment.systemPackages = with pkgs; [
+    uv
+    zoxide
+    yazi
+    fzf
     helix
     chromium
     _1password-cli
