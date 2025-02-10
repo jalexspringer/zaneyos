@@ -239,6 +239,7 @@ in
 
   environment.systemPackages = with pkgs; [
     helix
+    chromium
     _1password-cli
     _1password-gui
     vim
