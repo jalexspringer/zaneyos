@@ -26,6 +26,7 @@ let
 
     gs = "git status -sb";
     gc = "git commit -am";
+    gp = "git push origin main";
     # zig = "/home/${username}/.zvm/bin/zig";
     # zls = "/home/${username}/.zvm/bin/zls";
   };
