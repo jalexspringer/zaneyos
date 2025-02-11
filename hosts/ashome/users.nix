@@ -24,6 +24,14 @@ in
       shell = pkgs.fish;
       ignoreShellProgramCheck = true;
       packages = with pkgs; [
+        exercism
+        github-desktop
+        _1password-cli
+        _1password-gui
+        brave
+        tidal-hifi
+        uv
+        ruff-lsp
       ];
     };
   };

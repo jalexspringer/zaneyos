@@ -20,6 +20,12 @@ let
     la = "eza -lah --icons --grid --group-directories-first";
     ".." = "cd ..";
     zvm = "/home/${username}/.zvm/self/zvm";
+    zb = "zig build";
+
+    ne = "hx /home/${username}/zaneyos/hosts/ashome/";
+
+    gs = "git status -sb";
+    gc = "git commit -am";
     # zig = "/home/${username}/.zvm/bin/zig";
     # zls = "/home/${username}/.zvm/bin/zls";
   };

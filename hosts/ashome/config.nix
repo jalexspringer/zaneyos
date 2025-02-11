@@ -244,13 +244,8 @@ in
   };
 
   environment.systemPackages = with pkgs; [
-    github-desktop
-    uv
-    ruff-lsp
     yazi
     helix
-    _1password-cli
-    _1password-gui
     vim
     wget
     killall
@@ -260,7 +255,6 @@ in
     cmatrix
     lolcat
     htop
-    brave
     libvirt
     lxqt.lxqt-policykit
     lm_sensors
@@ -301,12 +295,10 @@ in
     swaynotificationcenter
     imv
     mpv
-    gimp
     pavucontrol
     tree
     neovide
     greetd.tuigreet
-    tidal-hifi
   ];
 
   fonts = {
