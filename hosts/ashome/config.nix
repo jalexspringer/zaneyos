@@ -315,6 +315,7 @@ in
   environment.variables = {
     ZANEYOS_VERSION = "2.3";
     ZANEYOS = "true";
+    WLR_NO_HARDWARE_CURSORS = 1;
   };
 
   # Extra Portal Configuration
