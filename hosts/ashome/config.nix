@@ -86,15 +86,15 @@ in
     cursor.size = 24;
     fonts = {
       monospace = {
-        package = pkgs.nerd-fonts.iosevka-term;
-        name = "IosevkaTerm";
+        package = pkgs.iosevka;
+        name = "Iosevka Term";
       };
       sansSerif = {
-        package = pkgs.montserrat;
+        package = pkgs.iosevka;
         name = "Iosevka";
       };
       serif = {
-        package = pkgs.montserrat;
+        package = pkgs.iosevka;
         name = "Iosevka";
       };
       sizes = {

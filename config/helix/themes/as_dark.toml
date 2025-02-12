@@ -1,4 +1,4 @@
-inherits = "ayu_evolve"
+inherits = "dark_high_contrast"
 "ui.background" ={}
 # "ui.statusline.normal" = { fg = "black", bg = "orange", modifiers = ["bold"] }
 # "ui.statusline.insert" = { fg = "black", bg = "green", modifiers = ["bold"] }

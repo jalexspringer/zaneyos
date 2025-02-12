@@ -191,6 +191,7 @@ in
     kitty = {
       enable = true;
       package = pkgs.kitty;
+      themeFile = "GitHub_Dark_High_Contrast";
       settings = {
         scrollback_lines = 2000;
         wheel_scroll_min_lines = 1;
