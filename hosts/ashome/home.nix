@@ -99,7 +99,7 @@ in
           mode.normal = "NORMAL";
           mode.insert = "INSERT";
           mode.select = "SELECT";
-          left = ["mode" "spinner" "version-control" "file-name"];
+          left = ["mode" "spinner" "version-control" "separator" "file-name" "file-modification-indicator" "read-only-indicator"];
         };
 
         auto-save.focus-lost = true;
@@ -128,15 +128,23 @@ in
           "}" = "goto_next_paragraph";
           "A-x" = "extend_to_line_bounds";
           "X" = "select_line_above";
+          tab = "extend_parent_node_end";
+          "S-tab" = "extend_parent_node_start";
         };
         normal = {
           "A-x" = "extend_to_line_bounds";
           "X" = "select_line_above";
+          tab = "move_parent_node_end";
+          "S-tab" = "move_parent_node_start";
           space = {
             space = "file_picker";
             e = ":write";
             z = ":sh zig build";
+            q = ":write-quit";
           };
+        };
+        insert = {
+          "S-tab" = "move_parent_node_start";
         };
       };
     };
