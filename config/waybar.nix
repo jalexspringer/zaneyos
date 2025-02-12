@@ -197,8 +197,8 @@ with lib;
           border-radius: 10px;
         }
         #workspaces button {
-          padding: 0px 5px;
-          margin: 0px 0px;
+          padding: 0px 0px;
+          margin: 0px 5px;
           border-radius: 10px;
           color: #${config.lib.stylix.colors.base00};
           background: linear-gradient(45deg, #${config.lib.stylix.colors.base08}, #${config.lib.stylix.colors.base0D});
@@ -259,7 +259,7 @@ with lib;
           color: #0D0E15;
           background: linear-gradient(90deg, #${config.lib.stylix.colors.base0E}, #${config.lib.stylix.colors.base0C});
           margin: 0px;
-          padding:0px 15px 0px 15px;
+          padding:0px 10px 0px 10px;
           border-radius: 0px 0px 0px 10px;
         }
       ''

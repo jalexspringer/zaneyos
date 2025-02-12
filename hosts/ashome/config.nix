@@ -60,7 +60,7 @@ in
   # Styling Options
   stylix = {
     enable = true;
-    image = ../../config/wallpapers/beautifulmountainscape.jpg;
+    image = ../../config/wallpapers/lofoten1.jpg;
     # base16Scheme = {
     #   base00 = "232136";
     #   base01 = "2a273f";
@@ -80,7 +80,7 @@ in
     #   base0F = "56526e";
     # };
     polarity = "dark";
-    opacity.terminal = 0.8;
+    opacity.terminal = 0.2;
     cursor.package = pkgs.bibata-cursors;
     cursor.name = "Bibata-Modern-Ice";
     cursor.size = 24;
@@ -91,11 +91,11 @@ in
       };
       sansSerif = {
         package = pkgs.montserrat;
-        name = "Montserrat";
+        name = "Iosevka";
       };
       serif = {
         package = pkgs.montserrat;
-        name = "Montserrat";
+        name = "Iosevka";
       };
       sizes = {
         applications = 12;
@@ -313,6 +313,7 @@ in
       symbola
       material-icons
       nerd-fonts.iosevka-term
+      iosevka
     ];
   };
 

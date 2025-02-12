@@ -235,6 +235,9 @@ in
       enable = true;
       generateCompletions = true;
       shellAliases = myAliases;
+      interactiveShellInit = ''
+        set fish_greeting # Disable greeting
+        '';
     };
     home-manager.enable = true;
     hyprlock = {
