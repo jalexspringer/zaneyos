@@ -198,8 +198,8 @@ with lib;
         }
         #workspaces button {
           padding: 0px 5px;
-          margin: 0px 3px;
-          border-radius: 16px;
+          margin: 0px 0px;
+          border-radius: 10px;
           color: #${config.lib.stylix.colors.base00};
           background: linear-gradient(45deg, #${config.lib.stylix.colors.base08}, #${config.lib.stylix.colors.base0D});
           opacity: 0.5;
