@@ -25,6 +25,8 @@ in
       ignoreShellProgramCheck = true;
       packages = with pkgs; [
         keymapp
+        gdb
+        # lldb
         exercism
         github-desktop
         _1password-cli

@@ -27,8 +27,6 @@ let
     gs = "git status -sb";
     gc = "git commit -am";
     gp = "git push origin main";
-    # zig = "/home/${username}/.zvm/bin/zig";
-    # zls = "/home/${username}/.zvm/bin/zls";
   };
 in
 {
@@ -84,6 +82,7 @@ in
       # theme = "as_dark";
 
       editor = {
+        bufferline = "multiple";
         color-modes = true;
         line-number = "relative";
         mouse = false;
@@ -136,6 +135,7 @@ in
           space = {
             space = "file_picker";
             e = ":write";
+            z = ":sh zig build";
           };
         };
       };
