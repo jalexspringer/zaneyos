@@ -22,14 +22,13 @@ with lib;
         position = "top";
         modules-center = [ "hyprland/workspaces" ];
         modules-left = [
-          "custom/startmenu"
+        ];
+        modules-right = [
           "hyprland/window"
           "pulseaudio"
           "cpu"
           "memory"
           "idle_inhibitor"
-        ];
-        modules-right = [
           "custom/hyprbindings"
           "custom/notification"
           "custom/exit"
@@ -49,7 +48,7 @@ with lib;
           on-scroll-down = "hyprctl dispatch workspace e-1";
         };
         "clock" = {
-          format = if clock24h == true then '' {:L%H:%M}'' else '' {:L%I:%M %p}'';
+          format = if clock24h == true then ''{:L%H:%M}'' else ''{:L%I:%M %p}'';
           tooltip = true;
           tooltip-format = "<big>{:%A, %d.%B %Y }</big>\n<tt><small>{calendar}</small></tt>";
         };
@@ -200,7 +199,6 @@ with lib;
           border-radius: 16px;
         }
         #workspaces button {
-          font-weight: bold;
           padding: 0px 5px;
           margin: 0px 3px;
           border-radius: 16px;
@@ -210,7 +208,6 @@ with lib;
           transition: ${betterTransition};
         }
         #workspaces button.active {
-          font-weight: bold;
           padding: 0px 5px;
           margin: 0px 3px;
           border-radius: 16px;
@@ -221,7 +218,6 @@ with lib;
           min-width: 40px;
         }
         #workspaces button:hover {
-          font-weight: bold;
           border-radius: 16px;
           color: #${config.lib.stylix.colors.base00};
           background: linear-gradient(45deg, #${config.lib.stylix.colors.base08}, #${config.lib.stylix.colors.base0D});
@@ -237,7 +233,6 @@ with lib;
           color: #${config.lib.stylix.colors.base08};
         }
         #window, #pulseaudio, #cpu, #memory, #idle_inhibitor {
-          font-weight: bold;
           margin: 4px 0px;
           margin-left: 7px;
           padding: 0px 18px;
@@ -255,7 +250,6 @@ with lib;
         }
         #custom-hyprbindings, #network, #battery,
         #custom-notification, #tray, #custom-exit {
-          font-weight: bold;
           background: #${config.lib.stylix.colors.base0F};
           color: #${config.lib.stylix.colors.base00};
           margin: 4px 0px;
@@ -264,11 +258,10 @@ with lib;
           padding: 0px 18px;
         }
         #clock {
-          font-weight: bold;
           color: #0D0E15;
           background: linear-gradient(90deg, #${config.lib.stylix.colors.base0E}, #${config.lib.stylix.colors.base0C});
           margin: 0px;
-          padding: 10px 15px 0px 30px;
+          padding:0px 15px 0px 30px;
           border-radius: 0px 0px 0px 40px;
         }
       ''
