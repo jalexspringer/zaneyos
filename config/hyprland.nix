@@ -151,7 +151,7 @@ with lib;
           bind = ${modifier},G,exec,gimp
           bind = ${modifier}SHIFT,G,exec,godot4
           bind = ${modifier},T,exec,thunar
-          bind = ${modifier},M,exec,spotify
+          bind = ${modifier},M,exec,brave listen.tidal.com
           bind = ${modifier},Q,killactive,
           bind = ${modifier},P,pseudo,
           bind = ${modifier}SHIFT,I,togglesplit,
