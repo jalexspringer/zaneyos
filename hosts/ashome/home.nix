@@ -204,7 +204,10 @@ in
         inactive_tab_font_style bold
       '';
       keybindings = {
-        "ctrl + s" = "set_font_size 20";
+        "ctrl + shift + alt + super + h" = "neighboring_window left";
+        "ctrl + shift + alt + super + l" = "neighboring_window right";
+        "ctrl + shift + alt + super + j" = "neighboring_window down";
+        "ctrl + shift + alt + super + k" = "neighboring_window up";
       };
     };
      starship = {
