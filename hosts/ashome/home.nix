@@ -77,9 +77,101 @@ in
     fill_shape=false
   '';
 
-  # home.file.".config/ghostty/config".source = ../../config/ghostty/config;
 
-  # Install & Configure Git
+  programs.helix = {
+    enable = true;
+    settings = {
+      # theme = "as_dark";
+
+      editor = {
+        color-modes = true;
+        line-number = "relative";
+        mouse = false;
+
+        cursor-shape = {
+          insert = "bar";
+          normal = "block";
+          select = "underline";
+        };
+
+        file-picker.hidden = false;
+
+        statusline = {
+          mode.normal = "NORMAL";
+          mode.insert = "INSERT";
+          mode.select = "SELECT";
+          left = ["mode" "spinner" "version-control" "file-name"];
+        };
+
+        auto-save.focus-lost = true;
+
+        lsp = {
+          auto-signature-help = false;
+          display-messages = true;
+        };
+
+        indent-guides = {
+          character = "╎";
+          render = true;
+        };
+
+        end-of-line-diagnostics = "hint";
+
+        inline-diagnostics = {
+          cursor-line = "error";
+          other-lines = "disable";
+        };
+      };
+
+      keys = {
+        select = {
+          "{" = "goto_prev_paragraph";
+          "}" = "goto_next_paragraph";
+          "A-x" = "extend_to_line_bounds";
+          "X" = "select_line_above";
+        };
+        normal = {
+          "A-x" = "extend_to_line_bounds";
+          "X" = "select_line_above";
+          space = {
+            space = "file_picker";
+            e = ":write";
+          };
+        };
+      };
+    };
+
+    languages = {
+      language = [
+        {
+          name = "python";
+          auto-format = true;
+          language-servers = [
+            { name = "pyright"; }
+            { name = "ruff-lsp"; }
+          ];
+          roots = ["uv.lock" ".git" "pyproject.toml"];
+          file-types = ["py" "ipynb"];
+          formatter = {
+            command = "bash";
+            args = ["-c" "uvx ruff check --fix - | uvx ruff format -"];
+          };
+        }
+      ];
+
+      "language-server".pyright = {
+        command = "pyright-langserver";
+        args = ["--stdio"];
+        config = {};
+      };
+
+      "language-server"."ruff-lsp" = {
+        command = "ruff-lsp";
+        args = [];
+        config = {};
+      };
+    };
+  };
   programs.git = {
     enable = true;
     userName = "${gitUsername}";

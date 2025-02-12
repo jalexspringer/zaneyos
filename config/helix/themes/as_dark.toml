@@ -1,6 +1,0 @@
-inherits = "rose_pine"
-"ui.background" ={}
-# "ui.statusline.normal" = { fg = "black", bg = "orange", modifiers = ["bold"] }
-# "ui.statusline.insert" = { fg = "black", bg = "green", modifiers = ["bold"] }
-# "ui.statusline.select" = { fg = "black", bg = "magenta", modifiers = ["bold"] }
-# "ui.statusline" = { fg = "black", bg = "blue"}
