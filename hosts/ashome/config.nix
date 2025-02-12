@@ -7,7 +7,7 @@
   ...
 }:
 let
-  inherit (import ./variables.nix) keyboardLayout consoleKeyMap;
+  inherit (import ./variables.nix) keyboardLayout keyboardVariant consoleKeyMap;
 in
 {
   imports = [
@@ -338,12 +338,13 @@ in
   };
 
   # Services to start
+  console.keyMap = "${consoleKeyMap}";
   services = {
     xserver = {
       enable = false;
       xkb = {
         layout = "${keyboardLayout}";
-        variant = "mac";
+        variant = "${keyboardVariant}";
       };
     };
     greetd = {
@@ -484,7 +485,6 @@ in
     enable = true;
   };
 
-  console.keyMap = "${consoleKeyMap}";
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];

@@ -12,6 +12,7 @@ let
     terminal
     extraMonitorSettings
     keyboardLayout
+    keyboardVariant
     ;
 in
 with lib;
@@ -59,6 +60,7 @@ with lib;
           }
           input {
             kb_layout = ${keyboardLayout}
+            kb_variant = ${keyboardVariant}
             kb_options = grp:alt_shift_toggle
             kb_options = caps:super
             follow_mouse = 1
