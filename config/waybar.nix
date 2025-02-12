@@ -56,17 +56,17 @@ with lib;
           max-length = 22;
           separate-outputs = false;
           rewrite = {
-            "" = " 🙈 No Windows? ";
+            "" = "";
           };
         };
         "memory" = {
           interval = 5;
-          format = " {}%";
+          format = "   {}%";
           tooltip = true;
         };
         "cpu" = {
           interval = 5;
-          format = " {usage:2}%";
+          format = "   {usage:2}%";
           tooltip = true;
         };
         "disk" = {
@@ -234,11 +234,11 @@ with lib;
         }
         #window, #pulseaudio, #cpu, #memory, #idle_inhibitor {
           margin: 4px 0px;
-          margin-left: 7px;
+          margin-right: 7px;
           padding: 0px 18px;
           background: #${config.lib.stylix.colors.base04};
           color: #${config.lib.stylix.colors.base00};
-          border-radius: 24px 10px 24px 10px;
+          border-radius: 10px 10px 10px 10px;
         }
         #custom-startmenu {
           color: #${config.lib.stylix.colors.base0B};
@@ -254,15 +254,15 @@ with lib;
           color: #${config.lib.stylix.colors.base00};
           margin: 4px 0px;
           margin-right: 7px;
-          border-radius: 10px 24px 10px 24px;
+          border-radius: 10px 10px 10px 10px;
           padding: 0px 18px;
         }
         #clock {
           color: #0D0E15;
           background: linear-gradient(90deg, #${config.lib.stylix.colors.base0E}, #${config.lib.stylix.colors.base0C});
           margin: 0px;
-          padding:0px 15px 0px 30px;
-          border-radius: 0px 0px 0px 40px;
+          padding:0px 15px 0px 15px;
+          border-radius: 0px 0px 0px 10px;
         }
       ''
     ];
