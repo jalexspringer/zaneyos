@@ -184,7 +184,7 @@ with lib;
       ''
         * {
           font-family: Iosevka Term;
-          font-size: 16px;
+          font-size: 14px;
           border-radius: 0px;
           border: none;
           min-height: 0px;
@@ -268,7 +268,7 @@ with lib;
           color: #0D0E15;
           background: linear-gradient(90deg, #${config.lib.stylix.colors.base0E}, #${config.lib.stylix.colors.base0C});
           margin: 0px;
-          padding: 0px 15px 0px 30px;
+          padding: 10px 15px 0px 30px;
           border-radius: 0px 0px 0px 40px;
         }
       ''
