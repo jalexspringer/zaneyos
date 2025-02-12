@@ -160,6 +160,7 @@ in
         docker_context = {
           symbol = " ";
         };
+
         fossil_branch = {
           symbol = " ";
         };
@@ -250,6 +251,9 @@ in
     wget
     killall
     docker-compose
+    dive
+    podman-tui
+    podman-compose
     eza
     git
     cmatrix
@@ -462,7 +466,18 @@ in
 
   # Virtualization / Containers
   virtualisation.libvirtd.enable = true;
-  virtualisation.docker.enable = true;
+  virtualisation.containers.enable = true;
+  virtualisation = {
+    podman = {
+      enable = true;
+
+      # Create a `docker` alias for podman, to use it as a drop-in replacement
+      dockerCompat = true;
+
+      # Required for containers under podman-compose to be able to talk to each other.
+      defaultNetwork.settings.dns_enabled = true;
+    };
+  }
 
   # OpenGL
   hardware.graphics = {
