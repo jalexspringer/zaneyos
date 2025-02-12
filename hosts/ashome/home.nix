@@ -180,6 +180,24 @@ in
     };
     ghostty = {
       enable = true;
+      settings = {
+        keybind = [
+          # Split Management
+          "alt+super+n=new_split:right"
+          "alt+super+m=new_split:down"
+          "alt+super+j=goto_split:bottom"
+          "alt+super+k=goto_split:top"
+          "alt+super+h=goto_split:left"
+          "alt+super+l=goto_split:right"
+          "alt+super+b=close_surface"
+           
+          # "cmd+shift+up=resize_split:up,20"
+          # "cmd+shift+down=resize_split:down,20"
+          # "cmd+shift+left=resize_split:left,20"
+          # "cmd+shift+right=resize_split:right,20"
+        ];
+    };
+
     };
     zed-editor = {
       enable = true;

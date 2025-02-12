@@ -86,20 +86,24 @@ in
     cursor.size = 24;
     fonts = {
       monospace = {
-        package = pkgs.iosevka;
-        name = "Iosevka Term";
+        package = pkgs.hack-font;
+        name = "Hack";
       };
       sansSerif = {
-        package = pkgs.iosevka;
-        name = "Iosevka";
+        package = pkgs.hack-font;
+        name = "Hack";
+        #package = pkgs.iosevka;
+        #name = "Iosevka";
       };
       serif = {
-        package = pkgs.iosevka;
-        name = "Iosevka";
+        package = pkgs.hack-font;
+        name = "Hack";
+        #package = pkgs.iosevka;
+        #name = "Iosevka";
       };
       sizes = {
         applications = 12;
-        terminal = 12;
+        terminal = 13;
         desktop = 11;
         popups = 12;
       };
@@ -312,7 +316,6 @@ in
       font-awesome
       symbola
       material-icons
-      nerd-fonts.iosevka-term
       iosevka
     ];
   };

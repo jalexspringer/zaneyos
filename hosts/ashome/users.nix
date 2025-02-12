@@ -24,6 +24,7 @@ in
       shell = pkgs.fish;
       ignoreShellProgramCheck = true;
       packages = with pkgs; [
+        keymapp
         exercism
         github-desktop
         _1password-cli

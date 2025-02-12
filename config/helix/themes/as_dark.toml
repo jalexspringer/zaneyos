@@ -1,4 +1,4 @@
-inherits = "dark_high_contrast"
+inherits = "rose_pine"
 "ui.background" ={}
 # "ui.statusline.normal" = { fg = "black", bg = "orange", modifiers = ["bold"] }
 # "ui.statusline.insert" = { fg = "black", bg = "green", modifiers = ["bold"] }

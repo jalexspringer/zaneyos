@@ -9,7 +9,7 @@ font-size = 12
 #----------------------------------------
 # theme = ayu
 # theme = OneHalfLight
-theme = rose-pine-moon
+theme = rose-pine
 background-opacity = 0.8
 cursor-style = block
 adjust-cell-height = 15%

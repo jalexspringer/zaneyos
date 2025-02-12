@@ -19,10 +19,9 @@ with lib;
     settings = [
       {
         layer = "top";
-        position = "top";
+        position = "left";
         modules-left= [ "hyprland/workspaces" ];
         modules-right = [
-          "hyprland/window"
           "pulseaudio"
           "cpu"
           "memory"
@@ -59,12 +58,12 @@ with lib;
         };
         "memory" = {
           interval = 5;
-          format = "   {}%";
+          format = " {}%";
           tooltip = true;
         };
         "cpu" = {
           interval = 5;
-          format = "   {usage:2}%";
+          format = " {usage:2}%";
           tooltip = true;
         };
         "disk" = {
@@ -88,7 +87,7 @@ with lib;
           spacing = 12;
         };
         "pulseaudio" = {
-          format = "{icon} {volume}% {format_source}";
+          format = "{icon}\n{volume}%";
           format-bluetooth = "{volume}% {icon} {format_source}";
           format-bluetooth-muted = " {icon} {format_source}";
           format-muted = " {format_source}";
@@ -198,7 +197,7 @@ with lib;
         }
         #workspaces button {
           padding: 0px 0px;
-          margin: 0px 5px;
+          margin: 5px 5px;
           border-radius: 10px;
           color: #${config.lib.stylix.colors.base00};
           background: linear-gradient(45deg, #${config.lib.stylix.colors.base08}, #${config.lib.stylix.colors.base0D});
@@ -230,14 +229,6 @@ with lib;
         tooltip label {
           color: #${config.lib.stylix.colors.base08};
         }
-        #window, #pulseaudio, #cpu, #memory, #idle_inhibitor {
-          margin: 4px 0px;
-          margin-right: 7px;
-          padding: 0px 18px;
-          background: #${config.lib.stylix.colors.base04};
-          color: #${config.lib.stylix.colors.base00};
-          border-radius: 10px 10px 10px 10px;
-        }
         #custom-startmenu {
           color: #${config.lib.stylix.colors.base0B};
           background: #${config.lib.stylix.colors.base02};
@@ -246,21 +237,22 @@ with lib;
           padding: 0px 30px 0px 15px;
           border-radius: 0px 0px 40px 0px;
         }
+        #pulseaudio, #cpu, #memory, #idle_inhibitor,
         #custom-hyprbindings, #network, #battery,
         #custom-notification, #tray, #custom-exit {
           background: #${config.lib.stylix.colors.base0F};
           color: #${config.lib.stylix.colors.base00};
-          margin: 4px 0px;
-          margin-right: 7px;
-          border-radius: 10px 10px 10px 10px;
-          padding: 0px 18px;
+          margin: 5px 5px;
+          margin-right: 5px;
+          border-radius: 5px;
+          padding: 5px 0px;
         }
         #clock {
-          color: #0D0E15;
-          background: linear-gradient(90deg, #${config.lib.stylix.colors.base0E}, #${config.lib.stylix.colors.base0C});
+          color: #ffffff;
+          background: rgba(0,0,0,0);
           margin: 0px;
-          padding:0px 10px 0px 10px;
-          border-radius: 0px 0px 0px 10px;
+          padding:10px 0px 10px 0px;
+          border-radius: 0px 0px 0px 0px;
         }
       ''
     ];
