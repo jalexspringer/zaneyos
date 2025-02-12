@@ -20,9 +20,7 @@ with lib;
       {
         layer = "top";
         position = "top";
-        modules-center = [ "hyprland/workspaces" ];
-        modules-left = [
-        ];
+        modules-left= [ "hyprland/workspaces" ];
         modules-right = [
           "hyprland/window"
           "pulseaudio"
@@ -196,7 +194,7 @@ with lib;
           background: #${config.lib.stylix.colors.base01};
           margin: 4px 4px;
           padding: 5px 5px;
-          border-radius: 16px;
+          border-radius: 10px;
         }
         #workspaces button {
           padding: 0px 5px;
