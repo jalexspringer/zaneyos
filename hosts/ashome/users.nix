@@ -32,6 +32,7 @@ in
         tidal-hifi
         uv
         ruff-lsp
+        protonmail-desktop
       ];
     };
   };
