@@ -27,8 +27,6 @@ in
         gdb
         # lldb
         exercism
-        _1password-cli
-        _1password-gui
         uv
         ruff-lsp
       ];

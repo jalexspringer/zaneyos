@@ -206,6 +206,7 @@ in
   stylix.targets.waybar.enable = false;
   stylix.targets.rofi.enable = false;
   stylix.targets.hyprland.enable = false;
+  stylix.targets.ghostty.enable = false;
   gtk = {
     iconTheme = {
       name = "Papirus-Dark";
