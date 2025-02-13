@@ -28,6 +28,7 @@ in
         gdb
         # lldb
         taskwarrior3
+        taskwarrior-tui
         exercism
         github-desktop
         _1password-cli
