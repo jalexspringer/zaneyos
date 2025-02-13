@@ -413,6 +413,7 @@ in
     extraBackends = [ pkgs.sane-airscan ];
     disabledDefaultBackends = [ "escl" ];
   };
+  hardware.keyboard.zsa.enable = true;
 
   # Extra Logitech Support
   hardware.logitech.wireless.enable = false;

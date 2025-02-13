@@ -25,6 +25,9 @@ in
       ignoreShellProgramCheck = true;
       packages = with pkgs; [
         keymapp
+        marksman
+        markdown-oxide
+        dprint
         gdb
         # lldb
         taskwarrior3

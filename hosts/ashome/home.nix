@@ -165,6 +165,13 @@ in
           roots = ["uv.lock" ".git" "pyproject.toml"];
           file-types = ["py" "ipynb"];
         }
+        # {
+        #   name = "markdown";
+        #   auto-format = true;
+        #   formatter = {
+        #     command = "dprint"
+        #   }
+        # }
       ];
 
       "language-server".pyright = {
