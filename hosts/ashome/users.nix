@@ -27,15 +27,16 @@ in
         keymapp
         gdb
         # lldb
+        taskwarrior3
         exercism
         github-desktop
         _1password-cli
         _1password-gui
         brave
-        tidal-hifi
         uv
+        pyright
         ruff-lsp
-        protonmail-desktop
+        ruff
       ];
     };
   };

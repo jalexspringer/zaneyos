@@ -154,16 +154,16 @@ in
         {
           name = "python";
           auto-format = true;
+          formatter = {
+            command = "ruff";
+            args = ["format" "-" ];
+          };
           language-servers = [
             { name = "pyright"; }
             { name = "ruff-lsp"; }
           ];
           roots = ["uv.lock" ".git" "pyproject.toml"];
           file-types = ["py" "ipynb"];
-          formatter = {
-            command = "bash";
-            args = ["-c" "uvx ruff check --fix - | uvx ruff format -"];
-          };
         }
       ];
 
