@@ -1,4 +1,20 @@
+<!--toc:start-->
+- [ZaneyOS 🟰 Best ❄️ NixOS Configs](#zaneyos-🟰-best-️-nixos-configs)
+    - [🍖 Requirements](#🍖-requirements)
+    - [🎹 Pipewire, Spotify, & Notification Menu Controls](#🎹-pipewire-spotify-notification-menu-controls)
+    - [🏇 Optimized Workflow, tmpfs For Speed, & Simple Yet Elegant Neovim](#🏇-optimized-workflow-tmpfs-for-speed-simple-yet-elegant-neovim)
+    - [🖥️ Multi Host & User Configuration](#🖥️-multi-host-user-configuration)
+    - [👼 An Incredible Community Focused On Support](#👼-an-incredible-community-focused-on-support)
+    - [📦 How To Install Packages?](#📦-how-to-install-packages)
+    - [🙋 Having Issues / Questions?](#🙋-having-issues-questions)
+  - [⬇️ Install](#️-install)
+    - [📜 Script:](#📜-script)
+    - [🦽 Manual:](#🦽-manual)
+<!--toc:end-->
 <div align="center">
+
+[[README#🍖 Requirements]]
+
 
 ## ZaneyOS 🟰 Best ❄️ NixOS Configs
 
@@ -109,3 +125,5 @@ sudo nixos-rebuild switch --flake .#hostname
 Now when you want to rebuild the configuration you have access to an alias called flake-rebuild that will rebuild the flake!
 
 Hope you enjoy!
+
+

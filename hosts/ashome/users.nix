@@ -26,7 +26,8 @@ in
       packages = with pkgs; [
         keymapp
         marksman
-        markdown-oxide
+        lazygit
+        gitu
         dprint
         gdb
         # lldb
