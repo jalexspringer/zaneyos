@@ -23,14 +23,9 @@ in
 
   boot = {
     # Kernel
-    kernelPackages = pkgs.linuxPackages_zen;
+    # kernelPackages = pkgs.linuxPackages_zen;
     # This is for OBS Virtual Cam Support
-    kernelModules = [ "v4l2loopback" ];
-    extraModulePackages = [ config.boot.kernelPackages.v4l2loopback ];
-    # Needed For Some Steam Games
-    kernel.sysctl = {
-      "vm.max_map_count" = 2147483642;
-    };
+
     # Bootloader.
     loader.systemd-boot.enable = true;
     loader.efi.canTouchEfiVariables = true;
@@ -227,19 +222,6 @@ in
       enableSSHSupport = true;
     };
     virt-manager.enable = true;
-    steam = {
-      enable = true;
-      gamescopeSession.enable = true;
-      remotePlay.openFirewall = true;
-      dedicatedServer.openFirewall = true;
-    };
-    thunar = {
-      enable = true;
-      plugins = with pkgs.xfce; [
-        thunar-archive-plugin
-        thunar-volman
-      ];
-    };
   };
 
   nixpkgs.config.allowUnfree = true;
@@ -263,7 +245,6 @@ in
     cmatrix
     lolcat
     htop
-    libvirt
     lxqt.lxqt-policykit
     lm_sensors
     unzip
@@ -294,7 +275,6 @@ in
     playerctl
     nh
     nixfmt-rfc-style
-    discord
     libvirt
     swww
     grim
@@ -374,12 +354,6 @@ in
     gvfs.enable = true;
     openssh.enable = true;
     flatpak.enable = false;
-    printing = {
-      enable = true;
-      drivers = [
-        # pkgs.hplipWithPlugin
-      ];
-    };
     gnome.gnome-keyring.enable = true;
     avahi = {
       enable = true;
@@ -392,12 +366,6 @@ in
       user = "${username}";
       dataDir = "/home/${username}";
       configDir = "/home/${username}/.config/syncthing";
-    };
-    pipewire = {
-      enable = true;
-      alsa.enable = true;
-      alsa.support32Bit = true;
-      pulse.enable = true;
     };
     rpcbind.enable = false;
     nfs.server.enable = false;
@@ -417,14 +385,6 @@ in
   # Extra Logitech Support
   hardware.logitech.wireless.enable = false;
   hardware.logitech.wireless.enableGraphical = false;
-
-  # Bluetooth Support
-  hardware.bluetooth.enable = true;
-  hardware.bluetooth.powerOnBoot = true;
-  services.blueman.enable = true;
-
-  # Enable sound with pipewire.
-  services.pulseaudio.enable = false;
 
   # Security / Polkit
   security.rtkit.enable = true;
@@ -470,7 +430,6 @@ in
   };
 
   # Virtualization / Containers
-  virtualisation.libvirtd.enable = true;
   virtualisation.containers.enable = true;
   virtualisation = {
     podman = {
