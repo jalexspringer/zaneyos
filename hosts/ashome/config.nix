@@ -1,5 +1,4 @@
 {
-  config,
   pkgs,
   host,
   username,
@@ -24,9 +23,6 @@ in
   boot = {
     # Kernel
     kernelPackages = pkgs.linuxPackages_zen;
-    # This is for OBS Virtual Cam Support
-    kernelModules = [ "v4l2loopback" ];
-    extraModulePackages = [ config.boot.kernelPackages.v4l2loopback ];
     # Needed For Some Steam Games
     kernel.sysctl = {
       "vm.max_map_count" = 2147483642;
@@ -53,7 +49,7 @@ in
 
   programs.nix-ld.enable = true;
   programs.nix-ld.libraries = with pkgs; [
-    # Add any missing dynamic libraries for unpackaged 
+    # Add any missing dynamic libraries for unpackaged
     # programs here, NOT in environment.systemPackages
   ];
 
@@ -86,20 +82,20 @@ in
     cursor.size = 24;
     fonts = {
       monospace = {
-        package = pkgs.hack-font;
-        name = "Hack";
+        package = pkgs.iosevka;
+        name = "Iosevka Term";
       };
       sansSerif = {
-        package = pkgs.hack-font;
-        name = "Hack";
-        #package = pkgs.iosevka;
-        #name = "Iosevka";
+        # package = pkgs.hack-font;
+        # name = "Hack";
+        package = pkgs.iosevka;
+        name = "Iosevka";
       };
       serif = {
-        package = pkgs.hack-font;
-        name = "Hack";
-        #package = pkgs.iosevka;
-        #name = "Iosevka";
+        # package = pkgs.hack-font;
+        # name = "Hack";
+        package = pkgs.iosevka;
+        name = "Iosevka";
       };
       sizes = {
         applications = 12;
@@ -249,67 +245,85 @@ in
   };
 
   environment.systemPackages = with pkgs; [
-    nixd
-    nil
-    nixfmt-rfc-style
-    yazi
-    helix
-    vim
-    wget
-    killall
-    docker-compose
-    dive
-    podman-tui
-    podman-compose
-    lsd
-    git
-    cmatrix
-    lolcat
-    htop
-    libvirt
-    lxqt.lxqt-policykit
-    lm_sensors
-    unzip
-    unrar
-    libnotify
-    v4l-utils
-    ydotool
-    duf
-    ncdu
-    wl-clipboard
-    pciutils
-    ffmpeg
-    socat
-    ripgrep
-    lshw
-    bat
-    pkg-config
-    meson
-    hyprpicker
-    ninja
-    brightnessctl
-    virt-viewer
-    swappy
-    appimage-run
-    networkmanagerapplet
-    yad
-    inxi
-    playerctl
-    nh
-    nixfmt-rfc-style
-    discord
-    libvirt
-    swww
-    grim
-    slurp
-    file-roller
-    swaynotificationcenter
-    imv
-    mpv
-    pavucontrol
-    tree
-    neovide
-    greetd.tuigreet
+    # Development Tools & Text Editors
+    helix # Modern terminal-based text editor
+    vim # Classic text editor
+    nixd # Language server for Nix
+    nil # Nix language server
+    nixfmt-rfc-style # Nix code formatter
+    pkg-config # Helper tool for compiling applications
+    meson # Build system
+    ninja # Fast build system
+
+    # Container & Virtualization
+    docker-compose # Define multi-container Docker applications
+    dive # Tool for exploring Docker image layers
+    podman-tui # Terminal UI for Podman
+    podman-compose # Docker-compose alternative for Podman
+    libvirt # Virtualization API
+    virt-viewer # Viewer for virtual machines
+
+    # System Utilities
+    htop # Interactive process viewer
+    killall # Process termination utility
+    lm_sensors # Hardware monitoring
+    pciutils # PCI utilities
+    inxi # System information tool
+    duf # Disk usage viewer
+    ncdu # NCurses disk usage analyzer
+    lshw # Hardware lister
+    brightnessctl # Brightness control
+    ydotool # Command-line automation tool
+    socat # Multipurpose relay tool
+
+    # File Management
+    yazi # Terminal file manager
+    lsd # Modern ls command
+    tree # Directory listing tool
+    unzip # Archive extraction utility
+    unrar # Archive extraction utility
+    file-roller # Archive manager
+    bat # Enhanced cat command
+    ripgrep # Fast search tool
+
+    # Multimedia
+    ffmpeg # Multimedia framework
+    v4l-utils # Video4Linux utilities
+    mpv # Media player
+    imv # Image viewer
+    swappy # Screenshot editor
+    playerctl # Media player controller
+    pavucontrol # PulseAudio volume control
+
+    # Wayland/Desktop Environment
+    swww # Wayland wallpaper daemon
+    grim # Screenshot utility for Wayland
+    slurp # Region selector for Wayland
+    hyprpicker # Color picker
+    swaynotificationcenter # Notification daemon
+    wl-clipboard # Clipboard utilities for Wayland
+    networkmanagerapplet # Network management tray utility
+    lxqt.lxqt-policykit # PolicyKit authentication agent
+
+    # Applications
+    discord # Chat and communication platform
+    greetd.tuigreet # Console-based greeter
+
+    # Fun & Decorative
+    cmatrix # Matrix-like screen effect
+    lolcat # Rainbow text colorizer
+
+    # Network & Download Tools
+    wget # File download utility
+    git # Version control system
+
+    # Notification & System Integration
+    libnotify # Desktop notifications library
+    yad # Dialog boxes creator
+
+    # Additional Tools
+    nh # Nix helper tool
+    appimage-run # AppImage runner
   ];
 
   fonts = {
@@ -324,6 +338,7 @@ in
   };
 
   environment.variables = {
+    EDITOR = "hx";
     ZANEYOS_VERSION = "2.3";
     ZANEYOS = "true";
     WLR_NO_HARDWARE_CURSORS = 1;
@@ -359,7 +374,6 @@ in
       vt = 3;
       settings = {
         default_session = {
-          # Wayland Desktop Manager is installed only for user ryan via home-manager!
           user = username;
           # .wayland-session is a script generated by home-manager, which links to the current wayland compositor(sway/hyprland or others).
           # with such a vendor-no-locking script, we can switch to another wayland compositor without modifying greetd's config here.
@@ -492,7 +506,6 @@ in
   hardware.graphics = {
     enable = true;
   };
-
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];

@@ -1,6 +1,5 @@
 {
   pkgs,
-  lib,
   username,
   host,
   ...
@@ -8,16 +7,20 @@
 let
   inherit (import ./variables.nix) gitUsername gitEmail;
   myAliases = {
-    sv = "sudo nvim";
+    sh = "sudo hx";
     fr = "nh os switch --hostname ${host} /home/${username}/zaneyos";
     fu = "nh os switch --hostname ${host} --update /home/${username}/zaneyos";
     zu = "sh <(curl -L https://gitlab.com/Zaney/zaneyos/-/raw/main/install-zaneyos.sh)";
     ncg = "nix-collect-garbage --delete-old && sudo nix-collect-garbage -d && sudo /run/current-system/bin/switch-to-configuration boot";
-    v = "nvim";
+    v = "vim";
     cat = "bat";
-    ls = "lsd";
-    ll = "lsd -lh --icons --grid --group-directories-first";
-    la = "lsd -lah --icons --grid --group-directories-first";
+    l = "lsd -la"; # Long listing with hidden files
+    ll = "lsd -l --group-directories-first"; # Long listing
+    la = "lsd -la --group-directories-first"; # Long listing with hidden files, directories first
+    llm = "lsd -l --timesort"; # Long listing sorted by modification time
+    lS = "lsd --oneline --classic"; # Single-line classic view
+    lt = "lsd --tree --depth=2"; # Tree view, 2 levels deep
+
     ".." = "cd ..";
     zvm = "/home/${username}/.zvm/self/zvm";
     zb = "zig build";
@@ -39,9 +42,7 @@ in
   # Import Program Configurations
   imports = [
     ../../config/emoji.nix
-    ../../config/fastfetch
     ../../config/hyprland.nix
-    ../../config/neovim.nix
     ../../config/helix.nix
     ../../config/rofi/rofi.nix
     ../../config/rofi/config-emoji.nix
@@ -75,7 +76,6 @@ in
     early_exit=true
     fill_shape=false
   '';
-
 
   programs.git = {
     enable = true;
@@ -121,7 +121,6 @@ in
   #   platformTheme.name = lib.mkDefault "gtk3";
   # };
 
-
   # Scripts
   home.packages = [
     (import ../../scripts/emopicker9000.nix { inherit pkgs; })
@@ -149,7 +148,7 @@ in
           after_sleep_cmd = "hyprctl dispatch dpms on";
           ignore_dbus_inhibit = false;
           lock_cmd = "hyprlock";
-          };
+        };
         listener = [
           {
             timeout = 900;
@@ -187,17 +186,14 @@ in
           "alt+super+h=goto_split:left"
           "alt+super+l=goto_split:right"
           "alt+super+b=close_surface"
-           
+
           # "cmd+shift+up=resize_split:up,20"
           # "cmd+shift+down=resize_split:down,20"
           # "cmd+shift+left=resize_split:left,20"
           # "cmd+shift+right=resize_split:right,20"
         ];
-    };
+      };
 
-    };
-    zed-editor = {
-      enable = true;
     };
     yazi = {
       enable = true;
@@ -226,10 +222,10 @@ in
         "ctrl + shift + alt + super + k" = "neighboring_window up";
       };
     };
-     starship = {
-            enable = true;
-            package = pkgs.starship;
-     };
+    starship = {
+      enable = true;
+      package = pkgs.starship;
+    };
     bash = {
       enable = true;
       enableCompletion = true;
@@ -253,7 +249,7 @@ in
       shellAliases = myAliases;
       interactiveShellInit = ''
         set fish_greeting # Disable greeting
-        '';
+      '';
     };
     home-manager.enable = true;
     hyprlock = {
