@@ -249,6 +249,9 @@ in
   };
 
   environment.systemPackages = with pkgs; [
+    nixd
+    nil
+    nixfmt-rfc-style
     yazi
     helix
     vim
@@ -258,7 +261,7 @@ in
     dive
     podman-tui
     podman-compose
-    eza
+    lsd
     git
     cmatrix
     lolcat
@@ -345,7 +348,7 @@ in
   console.keyMap = "${consoleKeyMap}";
   services = {
     xserver = {
-      enable = false;
+      enable = true;
       xkb = {
         layout = "${keyboardLayout}";
         variant = "${keyboardVariant}";
