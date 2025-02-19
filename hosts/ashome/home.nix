@@ -30,6 +30,8 @@ let
     gs = "git status -sb";
     gc = "git commit -am";
     gp = "git push origin main";
+
+    dve = "nu -c \"zellij -l welcome --config-dir ~/.config/yazelix/zellij options --layout-dir ~/.config/yazelix/zellij/layouts\"";
   };
 in
 {
@@ -76,6 +78,10 @@ in
     early_exit=true
     fill_shape=false
   '';
+  home.file.".config/yazelix" = {
+    source = ../../config/yazelix;
+    recursive = true;
+  };
 
   programs.git = {
     enable = true;

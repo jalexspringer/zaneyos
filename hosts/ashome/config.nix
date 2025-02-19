@@ -246,7 +246,6 @@ in
 
   environment.systemPackages = with pkgs; [
     # Development Tools & Text Editors
-    helix # Modern terminal-based text editor
     vim # Classic text editor
     nixd # Language server for Nix
     nil # Nix language server
@@ -324,6 +323,8 @@ in
     # Additional Tools
     nh # Nix helper tool
     appimage-run # AppImage runner
+    nu
+    zellij
   ];
 
   fonts = {
